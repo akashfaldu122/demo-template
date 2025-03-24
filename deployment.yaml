@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: #{CONTAINER_NAME}#  # Placeholder for container name
-        image: #{IMAGE_NAME}#:#IMAGE_TAG#  # Dynamic image name and tag
+        image: #{IMAGE_NAME}#:#{IMAGE_TAG}#  # Dynamic image name and tag
         ports:
         - containerPort: 8080
         env:
