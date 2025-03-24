@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ${APP_NAME}-deployment  # Placeholder for app name
+  name: #{APP_NAME}#-deployment  # Placeholder for app name
 spec:
-  replicas: ${REPLICA_COUNT}  # Placeholder for replica count
+  replicas: #{REPLICA_COUNT}#  # Placeholder for replica count
   selector:
     matchLabels:
-      app: ${APP_NAME}
+      app: #{APP_NAME}#
   template:
     metadata:
       labels:
-        app: ${APP_NAME}
+        app: #{APP_NAME}#
     spec:
       containers:
-      - name: ${CONTAINER_NAME}  # Placeholder for container name
-        image: ${IMAGE_NAME}:${IMAGE_TAG}  # Dynamic image name and tag
+      - name: #{CONTAINER_NAME}#  # Placeholder for container name
+        image: #{IMAGE_NAME}#:#IMAGE_TAG#  # Dynamic image name and tag
         ports:
         - containerPort: 8080
         env:
@@ -27,11 +27,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: ${APP_NAME}-service  # Placeholder for service name
+  name: #{APP_NAME}#-service  # Placeholder for service name
 spec:
   type: LoadBalancer
   selector:
-    app: ${APP_NAME}
+    app: #{APP_NAME}#
   ports:
     - protocol: TCP
       port: 80
